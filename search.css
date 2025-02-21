@@ -1,0 +1,9 @@
+
+body {
+        background-image: linear - gradient(45deg, #0000ff, #710000);
+        background:powderblue;
+        display: flex;/* uses flexbox which responds to different screan sizes*/
+        align-items: center;/* vertically center items*/
+        justify-contentC;
+    width: 50px;
+}
