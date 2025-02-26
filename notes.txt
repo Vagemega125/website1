@@ -1,3 +1,10 @@
+code space
+    cd ..
+    cd website1
+
+open website
+http-server
+
 if I want github to reflect my changes..
     1. git add.
     2. git commit -m "example text"

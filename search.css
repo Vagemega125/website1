@@ -1,4 +1,5 @@
 
+
 body {
         background-image: linear - gradient(45deg, #0000ff, #710000);
         background:powderblue;
@@ -6,4 +7,47 @@ body {
         align-items: center;/* vertically center items*/
         justify-contentC;
     width: 50px;
+}
+.search{
+    position:relative;
+background-color:red;
+}
+.search{
+    height: 30px;
+    width: 300px;
+    background color: red;
+}
+
+.search . input{
+    height:50px;
+    width: 50px;
+    font-size:18px;
+    padding: 15px;
+    border: 0;
+    background-color: white;
+}
+
+.btn{
+    background-color: white;
+    border:0;
+    font-size:10 px;
+
+    cursor:pointer;
+    position: absolute;
+    top:0;
+    left:0;
+    transition: transform 1 ease;
+}
+
+.search.active.input{
+        width:200px;
+
+}
+
+.search.active .btn{
+    transform: translateX(198px);
+}
+
+.btn:focus, .input:focus{
+    outline:none;
 }
