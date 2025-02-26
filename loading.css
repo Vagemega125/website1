@@ -14,7 +14,7 @@ body{
 
 
 .bg{
-    background:url('images/fish.avif') no-repeats center center/cover;
+    background:url('../images/fish.avif') no-repeats center center/cover;
     background-size:cover;
     background-position:center;
     background-repeat:no-repeats;
