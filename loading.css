@@ -22,4 +22,10 @@ body{
     height:100vh;
     position:absolute;
     filter:blur(50px);
+    z-index:(-1);
+}
+
+.loading-text{
+    font-size:50px;
+    
 }
