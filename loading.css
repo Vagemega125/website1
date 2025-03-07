@@ -1,31 +1,94 @@
 
-
-*{
-    box-sizing:border-box;
+<style>@import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap') </style>.ubuntu-regular {
+    font-family: "Ubuntu", sans-serif;
+    font-weight: 400;
+    font-style: normal;
 }
 
-body{
-    display: flex;
+
+body {
+    font-family: "Ubuntu", sans-serif;
     height: 100vh;
-    align-items:center;
-    justify-content:center;
-    margin:0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
 }
 
-
-.bg{
-    background-image:url('../images/fish.avif');
-    background-size:cover;
-    background-position:center;
-    background-repeat:no-repeat;
-    width:100vw;
-    height:100vh;
-    position:absolute;
-    filter:blur(50px);
-    z-index:(-1);
+body.show-nav {
+    transform: translateX(200px);
 }
 
-.loading-text{
-    font-size:50px;
-    opacity:
+nav {
+    background-color: Cornflowerblue;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 200px;
+    height: 100%;
+    border-right: 2px solid rgba(200, 200, 200);
+    z-index: 100;
+    color: white;
+    transform: translateX(-100%);
 }
+
+nav .logo {
+    padding: 30px 0;
+    text-align: center;
+}
+
+nav .logo img {
+    height: 75px;
+    width: 75px;
+    border-radius: 50%;
+}
+
+nav ul li {
+    padding: 40px;
+    border-bottom: 2px solid rgba(200, 200, 200, 0.25);
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.loading-text {
+    font-size: 50px;
+}
+
+.bg {
+    height: 100vh;
+    width: 100vw;
+    position: absolute;
+    z-index: -1;
+    background-image: url('../images/fish.avif');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.toggle {
+    border: 0;
+    border-radius: 5px;
+    color: white;
+    padding: 8px 12px;
+    cursor: pointer;
+    background-color: rgba(0, 0, 0, 0.3);
+    position: absolute;
+    top: 50px;
+    left: 50px
+}
+
+    /* background-image:url('../images/fish.avif'); */

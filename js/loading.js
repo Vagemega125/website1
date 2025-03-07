@@ -1,16 +1,23 @@
-const LoadText = document.querySelectro('.loading-text')
-const bg = document.querySelector('.bg')
+loadText = document.querySelector('.loading-text')
+bg = document.querySelector('.bg')
 
-let load =0
+load = 0;
 
-let int = setInterval(blurring, 300)
+int = setInterval(blurring, 33)
 
-function blurring(){
-    load = load+1
-    if (load >99){
+
+function blurring() {
+    load++
+    if (load > 99) {
         clearInterval(int)
     }
-    LoadText.innerText = `${load}%`
-bg.style.filter = "blur(${50 - (load/2)}px)"
-LoadText.style.opacity ='${1-load/100}'
+
+    loadText.innerText = `${load}%`
+    loadText.style.opacity = 1 - load / 100
+    bg.style.filter = `blur(${30-(load/100)*30}px`
 }
+
+toggle = document.getElementById('toggle')
+toggle.addEventListener('click', () => {
+    document.body.classList.toggle('show-nav')
+})
