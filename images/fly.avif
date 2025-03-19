@@ -1,0 +1,6 @@
+<li>
+                <button class = "choose-insect-btn">
+                    <p>mosquito</p>
+                    <img src="" alt="mosquito">
+                </button>
+            </li>
