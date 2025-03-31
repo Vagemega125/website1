@@ -5,7 +5,7 @@
 body {
     font-family: "Open Sans", sans-serif;
     margin: 0;
-    background-image: url("images/Sea.jpg");
+    background-image: url("images/fish_v2.png");
     height: 100vh;
     display: flex;
     align-items: center;
@@ -29,9 +29,6 @@ nav {
     transform: translateX(-100%);
 }
 
-.hero{
-    background-image:url('/images/fish_v2.png');
-}
 
 nav .logo {
     padding: 30px 0;
