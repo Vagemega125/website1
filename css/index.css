@@ -1,9 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Jaini&display=swap');
 
 
 
 body {
-    font-family: "Open Sans", sans-serif;
+    font-family: "Jaini", system-ui;
     margin: 0;
     background-image: url("images/fish_v2.png");
     height: 100vh;
@@ -79,7 +79,6 @@ header p {
 }
 
 button {
-    background-color: cornflowerblue;
     border: 0;
     border-radius: 5px;
     color: white;
