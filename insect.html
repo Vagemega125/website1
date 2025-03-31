@@ -1,56 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="css/insect.css">
-</head>
-<body>
-    <div class="screen up">
-
-    <h1> Catch the insect</h1>
-    <button class = "btn" id = "start-button">Play Game</button>
-    <div>
-
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Insect Catching Game</title>
+        <link rel="stylesheet" href="css/insect.css">
+    </head>
+    <body>
         <div class="screen">
-        <h1> What is Your "Favorite" Insect?</h1>
-        <ul class="insect-list">
-            <li>
-                <button class = "choose-insect-btn">
-                    <p>Fly</p>
-                    <img src="images/fly.jpg" alt="fly">
+            <h1>Catch the insect
+                <button class="btn" id="start-btn"> Play Game
                 </button>
-            </li>
-            <li>
-                <button class = "choose-insect-btn">
-                    <p>mosquito</p>
-                    <img src="images/mosquito.jpg" alt="mosquito">
-                </button>
-            </li>
-            <li>
-                <button class = "choose-insect-btn">
-                    <p>spider</p>
-                    <img src="images/spider.jpg" alt="spider">
-                </button>
-            </li>
-            <li>
-                <button class = "choose-insect-btn">
-                    <p>roach</p>
-                    <img src="images/roach.jpg" alt="roach">
-                </button>
-            </li>
-        </ul>
-    </div>
-            <div class="screen game-container" id="game-container">
-            <h3 class ="time">Time:00:00</h3>
-            <h3 id="score" class="score">Score:0</h3>
-            <h5 class="message" id="message">
-                are you annoyed yet?<br>
-                you are playing an impossible game..
-            </h5>
+            </h1>
         </div>
-                <script src="js/insect.js"></script>
-</body>
+        <div class="screen">
+            <h1>What is your "favorite" insect</h1>
+            <ul class="insects-list">
+                <li>
+                    <button class="choose-insect-btn">
+                        <p>Fly</p>
+                        <img src="images/fly.jpg" alt="fly">
+                    </button>
+                </li>
+                <li>
+                    <button class="choose-insect-btn">
+                        <p>Mosquito</p>
+                        <img src="images/mosquito.jpg" alt="Mosquito">
+                    </button>
+                </li>
+                <li>
+                    <button class="choose-insect-btn">
+                        <p>spider</p>
+                        <img src="images/spider.jpg" alt="spider">
+                    </button>
+                </li>
+                <li>
+                    <button class="choose-insect-btn">
+                        <p>roach</p>
+                        <img src="images/roach.jpg" alt="roach">
+                    </button>
+                </li>
+            </ul>
+        </div>
+
+
+        <div class="screen game-container" id="game-container">
+            <h3 class="time" id="time">Time: 00:00</h3>
+            <h3 id="score" class="score">Score:0</h3>
+            <h5 id="message" class="message">
+                Are you annoyed yet?<br>
+                You are playing an impossible game..
+            </h5>
+            <div class="insect">
+                <img src="images/fly.jpg" alt="">
+            </div>
+            </h3>
+        </div>
+    </body>
+    <script src="js/insect.js"></script>
+
 </html>
+
 
