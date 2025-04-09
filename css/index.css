@@ -5,7 +5,7 @@
 body {
     font-family: "Jaini", system-ui;
     margin: 0;
-    background-image: url("images/fish_v2.png");
+    background:#fffff1 url('../images/fish_v2.jpg') no-repeat center center/cover;
     height: 100vh;
     display: flex;
     align-items: center;
@@ -25,7 +25,7 @@ nav {
     height: 100%;
     border-right: 2px solid rgba(200, 200, 200);
     z-index: 100;
-    color: black;
+    color: fffff1;
     transform: translateX(-100%);
 }
 
@@ -41,22 +41,22 @@ nav .logo img {
     border-radius: 50%;
 }
 
-nav site li {
+nav.site li {
     padding: 40px;
     border-bottom: 2px solid rgba(200, 200, 200, 0.25);
 }
 
-nav site li a {
+nav.site li a {
     color: white;
     text-decoration: none;
 }
 
-nav site li a:hover {
+nav.site li a:hover {
     text-decoration: underline;
     cursor: pointer;
 }
 
-nav site {
+nav.site {
     list-style-type: none;
     padding: 0;
     margin: 0;
@@ -90,7 +90,7 @@ button {
 .toggle {
     background-color: rgba(0, 0, 0, 0.3);
     position: absolute;
-    top: -240px;
+    top: -100px;
     left: -400px;
 
 }
