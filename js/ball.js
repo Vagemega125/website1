@@ -1,132 +1,92 @@
-const ball = document.CreateElement('div')
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 const windowHeight = window.innerHeight
 const windowWidth = window.innerWidth
 const ball = document.createElement('div')
 document.body.appendChild(ball)
 const LPaddle = document.createElement('div')
 document.body.appendChild(LPaddle)
-let LPaddleWidth = 20
+let LPaddleWidth =20
 let LPaddleHeight = 200
-let LPaddleSpeed = 5
-let LPaddleYPosition = windowHeight / 2 - LPaddleHeight / 2
+let LPaddleSpeed = 12
+let LPaddleYPosition = windowHeight / 2 - LPaddleHeight / 2;
+let LPaddleXPosition = 70
 const ballRadius = 30
-let ballXPosition = windowWidth / 2 - ballRadius
-let ballYPosition = windowHeight / 2 - ballRadius
+let ballXPosition = windowWidth/2 - ballRadius
+let ballYPosition = windowHeight/2 - ballRadius
 let ballSpeed = 5
-let ballXDirection = 1
+let ballXDirection =1
 let ballYDirection = 1
-let score = 0 //display the score and increase score by 1 every time the ball hits paddle
-let level = 1 //display the level and increase the level by 1 when score increases by 10
-//as lvls increase, increase ball speed
-//if ball gets past paddle, end game
-//end game = ball stop or disapear & display
 
-function moveBall() {
-    ballYPosition = ballYPosition + ballSpeed * ballYDirection
-    ballXPosition = ballXPosition + ballSpeed * ballXDirection
+document.getElementById('game_over')game_over.style.display = "none"
 
+
+const scoreEl = document.getElementById('score')
+let score = 0
+
+
+setInterval(moveBall,10)
+
+function moveBall(){
+    ballXPosition = ballXPosition + ballSpeed*ballXDirection
+    ballYPosition = ballYPosition + ballSpeed * ballYDirection;
+    ball.style.left = `${ballXPosition}px`
     ball.style.top = `${ballYPosition}px`
     if (ballYPosition < 0 || ballYPosition > windowHeight - 2 * ballRadius) {
-        ballYDirection = ballYDirection * -1
+        ballYDirection = ballYDirection *-1
+    }
+    if(ballXPosition <0||ballXPosition > windowWidth-2*ballRadius){
+        ballXDirection = ballXDirection *-1
     }
 
-    ball.style.left = `${ballXPosition}px`
-    if (ballXPosition < 0 || ballXPosition > windowWidth - 2 * ballRadius) {
-        ballXDirection = ballXDirection * -1
-    }
-
-    if (ballYPosition >= LPaddleYPosition) {
-        ballXDirection = ballXDirection * -1
-
-    }
     let ballTop = ballYPosition
-    let ballBottom = ballYPosition + 2 * ballRadius
+    let ballBottom = ballYPosition + 2* ballRadius
     let ballLeft = ballXPosition
     let LPaddleTop = LPaddleYPosition
     let LPaddleBottom = LPaddleYPosition + LPaddleHeight
     let LPaddleRight = LPaddleXPosition + LPaddleWidth
 
+    if (ballXPosition < 0) {
+        game_over.style.display = "appear"
+        ball.style.display = "none"
+    }
     if (
         (ballBottom >= LPaddleTop) &&
         (ballTop < LPaddleBottom) &&
         (ballLeft <= LPaddleRight) &&
         (ballXDirection == -1)
     ) {
-        ballXDirection = ballDirection * -1
-    }
+        ballXDirection = ballXDirection * -1
+        score = score + 1
 
+        display.scoreEl.HTML = 'Score:${score}'
+
+    }
 
 }
 
-function GameOver() {
-    if (ballXPosition <= 0) {
-        alert("Game Over");
-        ballRadius == 0
-        return;
 
-    }
-}
+
 
 createBall()
 
-function createBall() {
-    ball.style.height = `${2*ballRadius}px`
-    ball.style.width = `${2*ballRadius}px`
+function createBall(){
+    ball.style.height = "100px"
+    ball.style.width = "100px"
     ball.style.borderRadius = "50%"
-    ball.style.backgroundColor = "green"
+    ball.style.backgroundColor="green"
     ball.style.position = "absolute"
-    ball.style.top = `${windowHeight/2 - ballRadius}px`
-    ball.style.left = `${windowWidth/2 - ballRadius}px`
-
-
+    ball.style.top = `${ballYPosition}px`
+    ball.style.left = `${windowWidth / 2 - ballRadius/2}px`
 }
+
+createLPaddle();
+
 
 function createLPaddle() {
     LPaddle.style.height = `${LPaddleHeight}px`
     LPaddle.style.width = `${LPaddleWidth}px`
     LPaddle.style.background = 'blue'
     LPaddle.style.position = 'absolute'
-    LPaddle.style.left = "50px"
+    LPaddle.style.left = "70px"
     LPaddle.style.top = `${LPaddleYPosition}px`
 }
 
@@ -149,7 +109,6 @@ document.addEventListener('keyup', (event) => {
     if (event.key == 's') {
         sKey = false
     }
-
 })
 
 function moveLPaddle() {
