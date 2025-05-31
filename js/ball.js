@@ -16,11 +16,6 @@ let ballSpeed = 5
 let ballXDirection =1
 let ballYDirection = 1
 
-document.getElementById('game_over')game_over.style.display = "none"
-
-
-const scoreEl = document.getElementById('score')
-let score = 0
 
 
 setInterval(moveBall,10)
@@ -44,9 +39,8 @@ function moveBall(){
     let LPaddleBottom = LPaddleYPosition + LPaddleHeight
     let LPaddleRight = LPaddleXPosition + LPaddleWidth
 
-    if (ballXPosition < 0) {
-        game_over.style.display = "appear"
-        ball.style.display = "none"
+    if (ballXPosition < 0) {//game over
+        ballradius = 0;
     }
     if (
         (ballBottom >= LPaddleTop) &&
@@ -56,9 +50,6 @@ function moveBall(){
     ) {
         ballXDirection = ballXDirection * -1
         score = score + 1
-
-        display.scoreEl.HTML = 'Score:${score}'
-
     }
 
 }
