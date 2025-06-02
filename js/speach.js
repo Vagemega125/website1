@@ -6,11 +6,11 @@ const toggleBtn = document.getElementById('toggle')
 const closeBtn = document.getElementById('close')
 
 const data = [{
-        image: '../drink.jpg',
+        image: 'drink.jpg',
         text: "Im Thirsty"
     },
     {
-        image: '../food.jpg',
+        image: 'images/food.jpg',
         text: "I'm Hungry"
     },
     {
