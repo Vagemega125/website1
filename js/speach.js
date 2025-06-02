@@ -88,19 +88,22 @@ function setTextMessage(text){
 }
 
 //Speak Text
-Function speakText(){
+function speakText(){
     speechSynthesis.speak(message)
 }
 
 
 //toggle Text box
-toggleBtn.addEventListerner('click',()=>{
+toggleBtn.addEventListener('click',()=>{
     document.getElementById('text-box').classList.toggle('show')
 })
 
 //close Box
-closeBtn.addEventListener('click',()={
-    document.getElementById('text-box').classList.remove ('show')
+// closeBtn.addEventListener('click', ()={
+//     document.getElementById('text-box').classList.remove('show')
+// })
+closeBtn.addEventListener('click', ()=>{
+    document.getElementById('text-box').classList.remove('show')
 })
 
 let voices = []
