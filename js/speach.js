@@ -14,43 +14,43 @@ const data = [{
         text: "I'm Hungry"
     },
     {
-        image: '../tired.jpg',
+        image: 'tired.jpg',
         text: "I'm Tired"
     },
     {
-        image: '../hurt.jpg',
+        image: 'hurt.jpg',
         text: "I'm Hurt"
     },
     {
-        image: '../happy.jpg',
+        image: 'happy.jpg',
         text: "I'm Happy"
     },
     {
-        image: '../angry.jpg',
+        image: 'angry.jpg',
         text: "I'm Angry"
     },
     {
-        image: '../sad.jpg',
+        image: 'sad.jpg',
         text: "I'm Sad"
     },
     {
-        image: '../scared.jpg',
+        image: 'scared.jpg',
         text: "I'm Scared"
     },
     {
-        image: '../outside.jpg',
+        image: 'outside.jpg',
         text: "I want to go outside"
     },
     {
-        image: '../home.jpg',
+        image: 'home.jpg',
         text: "I want to go home"
     },
     {
-        image:'../school.jpg',
+        image: 'school.jpg',
         text: "I want to go to school",
     },
     {
-        Image: '../grandma.jpg',
+        Image: 'grandma.jpg',
         text: "I want to go to grandma's",
     },
 
@@ -67,14 +67,14 @@ function createBox(item) {
         <p class ="info"> ${item.text} </p>
     `
 
-box.addEventListener('click',()=>{
-    setTextMessage(item.text)
-    speakText()
+    box.addEventListener('click', () => {
+        setTextMessage(item.text)
+        speakText()
 
-    //add active effect
-    box.classList.add('active')
-    setTimeout( ()=> box.classList.remove('active') ,800)
-})
+        //add active effect
+        box.classList.add('active')
+        setTimeout(() => box.classList.remove('active'), 800)
+    })
 
     main.appendChild(box)
 }
@@ -83,18 +83,18 @@ box.addEventListener('click',()=>{
 const message = new speechSynthesisUtterance()
 
 //set text
-function setTextMessage(text){
-    message.text=text
+function setTextMessage(text) {
+    message.text = text
 }
 
 //Speak Text
-function speakText(){
+function speakText() {
     speechSynthesis.speak(message)
 }
 
 
 //toggle Text box
-toggleBtn.addEventListener('click',()=>{
+toggleBtn.addEventListener('click', () => {
     document.getElementById('text-box').classList.toggle('show')
 })
 
@@ -102,19 +102,19 @@ toggleBtn.addEventListener('click',()=>{
 // closeBtn.addEventListener('click', ()={
 //     document.getElementById('text-box').classList.remove('show')
 // })
-closeBtn.addEventListener('click', ()=>{
+closeBtn.addEventListener('click', () => {
     document.getElementById('text-box').classList.remove('show')
 })
 
 let voices = []
 
-function getVoice(){
+function getVoice() {
     voices = speachSynthesis.getVoices()
 
-    voices.foreach(voiice=>{
+    voices.foreach(voiice => {
         const option = document.createElement('option')
 
-        option.value=voice.name
+        option.value = voice.name
         option.innterText = '${voice.name}${voice.name}'
 
         voicesSelect.appendChild(option)
@@ -122,21 +122,21 @@ function getVoice(){
 }
 
 //voices changed
-speachS=tynthesis.addEventListener('voiceschanged',getVoices)
+speachS = tynthesis.addEventListener('voiceschanged', getVoices)
 
 
 //change voice
-voicesSelect.addEventListener('change',setVoice)
+voicesSelect.addEventListener('change', setVoice)
 
 //set voice
-function setVoice(e){
+function setVoice(e) {
     message.voice = voices.find(voice => voice.name === e.target.value)
 }
 
 getVoices()
 
 //readtext button
-readBtn.addEventListener('click',()=>{
+readBtn.addEventListener('click', () => {
     setTextMessage(textarea.value)
     speakText()
 })
